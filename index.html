@@ -1,100 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Contacts</title>
     <style>
-        body{
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            box-sizing: border-box;
-            background-image: url("https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
+        body {
+            background-color: black;
+            color: #C0C0C0;
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
         }
+
         main {
-            margin: auto;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 40px;
-        }
-        #name {
-            font-size: 120px;
-            font-family: 'linotype-didot';
-            font-display: auto;
-            color: #DADDD8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-        }
-
-        #def {
-            color: #FFD966;
-        }
-
-        #Profile {
-            color: #ECEBE4;
-            font-size: 40px;
-            text-decoration: none;
-        }
-        #Profile:hover {
-            color: #FFD966;
-            text-shadow: 0px 1px #ECEBE4;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        #Work {
-            color: #ECEBE4;
-            font-size: 40px;
-            text-decoration: none;
-        }
-        #Work:hover {
-            color: #FFD966;
-            text-shadow: 0px 1px #ECEBE4;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            height: 100vh;
+            padding: 0px;
         }
 
         #Contact {
-            color: #ECEBE4;
+            transform: rotate(90deg);
             font-size: 40px;
-            text-decoration: none;
-        }
-        #Contact:hover {
-            color: #FFD966;
-            text-shadow: 0px 1px #ECEBE4;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            margin: 0;
+            position: fixed;
         }
 
-        #rights {
-            color: #E0E0E0;
+        #contents {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            margin: auto;
+            font-size: 25px;
+            width: 350px;
         }
+        
+        #flex {
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
 
 
         footer {
+            color: #C0C0C0;
             display: flex;
             justify-content: flex-end;
-            position: fixed; bottom: 10px; right: 10px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        @media(max-width: 768px) {
+            main {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            #Contact {
+                transform: rotate(0deg);
+                position: static;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+
+            #contents {
+                font-size: 20px;
+                width: 90%;
+            }
+
+            #flex {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            #flex img {
+                height: 60px;
+            }
+        }
+
+
+        @media(max-width: 480px) {
+            #Contact {
+                font-size: 25px;
+            }
+
+            #contents {
+                font-size: 20px;
+            }
+
+            #flex img {
+                height: 50px;
+            }
+
+            footer {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
+
 <body>
+    <nav>
+        <div>
+            <a href="index.html" style="text-decoration: none; position:fixed"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEUAAAD////h4eGYmJjv7+/r6+suLi4rKyuUlJSBgYHS0tLy8vL39/cRERElJSXs7OwdHR0WFhZJSUlqampbW1szMzNlZWXJyclzc3MJCQmIiIggICAaGhqmpqbi4uK2trY6OjrqCUf+AAACBElEQVR4nO3cUVbCMBCF4Q6CFQQERRABYf+rFB48R6CpL0nHzv2/Fcw9SZqkbVJVAAAAAAAAAAAAAAAAAAAAAAAAAAAAyGf5+rZ69y6ioPXELkaHnXclhWzsx/TDu5YStiP75dO7nPzqoV1ZexeU2+PoOqA9e1eU2e42oNnYu6as9sO7gDbxLiqnuy4arZvWTQFtWnvXlc3spSlgoITzhjEYqpc2jsFIT5p5KmCU2WKW6KJhOmnd/JC5WHnXlkVyDJo9edeWxSLdgg/etWWxS47BIC3Y0kVjtGDzUi1QwG26i8YIeLujZwz2TXqpFiTgMvoYfIw+0Ycfg/voLZja0RvTRE+wVOs7lmp9t4s+TSzCd9F0CwYJmB6DNihnM+7q40fLbqKw6aGTgC1LtfIGiw4SDhwDmn1tiwc8ugY0O5YOeHIOaHYqnNC7Ccs3YstE0ZFh4YTe+c5ISMI/xB+H8Z+l8edD90YsvqYRWJcK7C3i7w8F9vgC72kE3rUJvC8VeOct8N1C4NuTwPdDibEY/ju+wL8YEh01/D9RAv+1CfybKDEWWcBFwAIugvBnZgTOPQmcXRM4fyhwhlTgHLDAWW6B8/gCdyoI3IshcLeJwP005wVc9DuGBO6JErjrS+C+tir+nXuVwL2JVfy7LwEAAAAAAAAAAAAAAAAAAAAAAAAAAP6rb01GHSHRz4b3AAAAAElFTkSuQmCC"
+                    style="height: 50px;" alt=""></a>
+        </div>
+    </nav>
+
     <main>
-        <h1 id="name">A r y a</h1>
-        <h1 id="name">K u m a r</h1>
-        <h2 id="def" style="font-weight: bold;">Computer Science Student</h2>
-        <a href="profile.html" id="Profile">Profile</a>
-        <a href="Work.html" id="Work">Work</a>
-        <a href="Contact.html" id="Contact">Contact</a>
+        <div id="Contact">
+            <H1>C O N T A C T S</H1>
+        </div>
+
+        <div id="contents">
+
+            <div style="text-align: center;">
+                <p>Please contact me at this e-mail address.</p>
+            </div>
+
+            <div>
+                <p>arya.25bcs10682@sst.scaler.com</p>
+            </div>
+
+            <div id="flex">
+                <div>
+                    <a href="https://www.linkedin.com/in/arya-kumar-244a09374/"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdgVqkmTBNgyB1c8-9Ae8PM2aRh9HP5cqLIw&s"
+                        alt="Linkedin" style="height: 50px;"></a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/ark_2137/"><img
+                        src="https://i.pinimg.com/originals/40/7d/e5/407de55fca9557b488275e16ffab8c42.jpg"
+                        alt="" style="height: 90px;"></a>
+                    <a href="https://codeforces.com/profile/arya2137"><img src="Untitled design.png" alt="codeforces" style="height: 60px; top: 30px;"></a>
+                </div>
+
+                <div>
+                    <a href="https://github.com/aryakumar2137"><img
+                        src="https://img.icons8.com/ios11/512/FFFFFF/github.png"
+                        alt="" style="height: 70px;"></a>
+                </div>
+            </div>
+        </div>
+
     </main>
-    
+
     <footer>
         <h2 id="rights">©2025 Arya Kumar All rights reserved</h2>
     </footer>
 </body>
+
 </html>
